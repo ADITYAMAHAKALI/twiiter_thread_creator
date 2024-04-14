@@ -1,0 +1,26 @@
+LLM Security
+
+Various security attacks using malicious prompts on LLMs are a major cause of concern for deploying LLM-based applications, especially in the context of chatbots. Large Language Models' unique ability to do in-context learning also makes them vulnerable to output malicious/harmful information despite LLM models being trained with trustworthy data and supervised-finetuned/RLHF on safety and legal regulations.
+
+Below are some of the many concerning LLM vulnerabilities:
+
+1. Many shot Jailbreaking By Anthropic: https://lnkd.in/gTJkr726
+2. ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs: https://lnkd.in/gsKr5AKt
+3. Prompt Injection attack against LLM-integrated Applications: https://lnkd.in/gQ-PERqu
+
+How to mitigate this risk?
+
+1. Safer Models: Model Developers are playing a cat-and-mouse game where as soon as the attack comes up they add examples in the training dataset to avoid such attacks, but retraining the model is very expensive.
+2. A Security layer: Before sending the prompt to the LLM, the security layer will perform 2 tasks,
+a. Sanitising the prompt: see llm guard: https://llm-guard.com/ , giskard : https://lnkd.in/g_ahui6D
+b. classifying the prompt as safe vs unsafe: see llm-security-prompt-injection : https://lnkd.in/gZThKav7
+
+Enterprises would have to adopt a common security layer responsible to do the above tasks, across many applications.
+
+prerequisites:
+
+1. Labelled Dataset of various prompt attacks, including questions asking for controversial stuff about politics, religion, etc.
+2. A prompt sanitising service
+2. An embedding service/model which matches the user query with the prompt attack database to check the safety.
+
+let me know your thoughts on this.
